@@ -53,3 +53,37 @@ public:
     }
 };
 
+
+
+
+// O(H) - Recursive stack space complexity solution - Relinking the BST nodes
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+private:
+    TreeNode* curr;
+    void inorder(TreeNode* root) {
+        if (!root) return;
+        inorder(root->left);
+        root->left = nullptr;
+        curr->right = root;
+        curr = curr->right;
+        inorder(root->right);
+    }
+public:
+    TreeNode* increasingBST(TreeNode* root) {
+        TreeNode* ans = new TreeNode(-1);
+        curr = ans;
+        inorder(root);
+        return ans->right;
+    }
+};
