@@ -6,3 +6,4 @@ The Solution Repository for Leetcode December Daily Challenge
 * 02) Linked List Random Node
 * 03) Increasing Order Search Tree 
 * 04) The Kth Factor of n
+* 05) Can Place Flowers
