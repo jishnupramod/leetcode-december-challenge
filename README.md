@@ -7,3 +7,6 @@ The Solution Repository for Leetcode December Daily Challenge
 * 03) Increasing Order Search Tree 
 * 04) The Kth Factor of n
 * 05) Can Place Flowers
+* 06) Populating Next Right Pointers II
+* 07) Spiral Matrix II
+*
