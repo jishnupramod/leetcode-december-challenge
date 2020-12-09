@@ -55,3 +55,19 @@ public:
     }
 };
 
+
+// Optimal and concise solution
+class Solution {
+public:
+    int numPairsDivisibleBy60(vector<int>& time) {
+        vector<int> mods(60);
+        int pairs = 0;
+        for (int t : time) {
+            int target = (60 - (t % 60)) % 60;
+            pairs += mods[target];
+            ++mods[t % 60];
+        }
+        return pairs;
+    }
+};
+
