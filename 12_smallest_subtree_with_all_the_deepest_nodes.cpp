@@ -41,6 +41,7 @@ The values of the nodes in the tree are unique.
 
 
 
+// Enumerating all possible paths and finding the last common node among the longest paths
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -93,6 +94,41 @@ public:
         }
         out:
         return deepRoot;
+    }
+};
+
+
+
+
+
+// Postorder traversal Solution
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+private:
+    pair<int, TreeNode*> depth(TreeNode* root) {
+        if (!root) return {0, nullptr};
+        pair<int, TreeNode*> left = depth(root->left);
+        pair<int, TreeNode*> right = depth(root->right);
+        int dl = left.first, dr = right.first;
+        if (dl == dr)
+            return {dl + 1, root};
+        if (dl > dr)
+            return {dl + 1, left.second};
+        return {dr + 1, right.second};
+    }
+public:
+    TreeNode* subtreeWithAllDeepest(TreeNode* root) {
+        return depth(root).second;
     }
 };
 
