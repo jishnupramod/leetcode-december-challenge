@@ -24,6 +24,7 @@ s contains only lowercase English letters.
 
 
 
+// Initial backtracking approach
 class Solution {
 private:
     typedef vector<string> vs;
@@ -60,6 +61,41 @@ public:
         vector<string> part;
         vector<vector<string>> partitions;
         backtrack(s, pal, part, partitions, 0);
+        return partitions;
+    }
+};
+
+
+
+
+// Somemore standard approach using Backtracking
+class Solution {
+private:
+    typedef vector<string> vs;
+    typedef vector<vector<string>> vvs;
+    
+    bool isPal(string& s, int start, int end) {
+        while (start <= end) {
+            if (s[start++] != s[end--])
+                return false;
+        }
+        return true;
+    }
+    void backtrack(string s, vs& part, vvs& partitions, int start) {
+        if (start >= s.length()) partitions.push_back(part);
+        for (int end=start; end<s.length(); ++end) {
+            if (isPal(s, start, end)) {
+                part.push_back(s.substr(start, end-start+1));
+                backtrack(s, part, partitions, end+1);
+                part.pop_back();
+            }
+        }
+    }
+public:
+    vector<vector<string>> partition(string s) {
+        vvs partitions;
+        vs part;
+        backtrack(s, part, partitions, 0);
         return partitions;
     }
 };
