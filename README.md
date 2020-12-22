@@ -20,3 +20,8 @@ The Solution Repository for Leetcode December Daily Challenge
 * 16) Validate Binary Search Tree
 * 17) 4Sum II
 * 18) Increasing Triplet Subsequence
+* 19) < Cherry Pickup II >
+* 20) < Decoded String at Index >
+* 21) < Smallest Range II >
+* 22) Balanced Binary Tree
+*
