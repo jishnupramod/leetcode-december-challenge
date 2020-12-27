@@ -27,3 +27,5 @@ The Solution Repository for Leetcode December Daily Challenge
 * 23) Next Greater Element III
 * 24) Swap Nodes in Pairs
 * 25) Diagonal Traverse 
+* 26) Decode Ways
+*
