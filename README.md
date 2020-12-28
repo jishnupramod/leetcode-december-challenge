@@ -28,4 +28,5 @@ The Solution Repository for Leetcode December Daily Challenge
 * 24) Swap Nodes in Pairs
 * 25) Diagonal Traverse 
 * 26) Decode Ways
+* 27) Jump Game IV
 *
