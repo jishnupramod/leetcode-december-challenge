@@ -30,4 +30,4 @@ The Solution Repository for Leetcode December Daily Challenge
 * 26) Decode Ways
 * 27) Jump Game IV
 * 28) Reach a Number
-*
+* 29) Pseudo-Palindromic Paths in a Binary Tree
